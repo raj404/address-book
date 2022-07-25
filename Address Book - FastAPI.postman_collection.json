@@ -1,0 +1,206 @@
+{
+	"info": {
+		"_postman_id": "5c12d9be-c8ce-4052-86a7-e8f6905c310e",
+		"name": "Address Book - FastAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16638769"
+	},
+	"item": [
+		{
+			"name": "Create Address",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"address\": \"Rajwada, indore\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/v1/be/address",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"v1",
+						"be",
+						"address"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Address by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/v1/be/address?id=afae3cca-2d8e-494b-a219-c4b4db2ee64c",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"v1",
+						"be",
+						"address"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "afae3cca-2d8e-494b-a219-c4b4db2ee64c"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Address by Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/v1/be/address?id=afae3cca-2d8e-494b-a219-c4b4db2ee64c",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"v1",
+						"be",
+						"address"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "afae3cca-2d8e-494b-a219-c4b4db2ee64c"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Address by Id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"9bcb6a4f-0d69-4379-b993-e61287c2ee15\",\r\n    \"address\": \"Farzi Cafe\",\r\n    \"api_address\": \"11th floor, Apollo premier building, Vijay Nagar Square, near sajan prabha, Ratna Lok Colony, Indore, Madhya Pradesh 452010, India\",\r\n    \"latitude\": \"22.7499954\",\r\n    \"longitude\":\"75.8967761\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/v1/be/address",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"v1",
+						"be",
+						"address"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve Address within Distance",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"distance\": 5.3,\r\n    \"coordinates\": {\r\n        \"latitude\": 22.6777605,\r\n        \"longitude\": 75.8264221\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/v1/be/address/retrieve",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"v1",
+						"be",
+						"address",
+						"retrieve"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Address",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/v1/be/all",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"v1",
+						"be",
+						"all"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{TOKEN}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "127.0.0.1:8000",
+			"type": "string"
+		},
+		{
+			"key": "{{TOKEN}}",
+			"value": "xxxxxxxxxxxxxxxxx",
+			"type": "string"
+		}
+	]
+}
